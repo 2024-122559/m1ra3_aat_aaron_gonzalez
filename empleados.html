@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+    <link rel="stylesheet" href="css/empleados.css">
+    <link rel="shortcut icon" href="img/Icono-Celeste-148x300.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-auto text-center mb-3 mb-md-0">
+            <img src="https://intecap.edu.gt/wp-content/uploads/2021/06/logo-intecap.png" 
+                 alt="baner intecap" 
+                 class="img-fluid" 
+                 style="width: 200px; height: auto;">
+          </div>
+          <div class="col-12 col-md"></div>
+          <div class="col-12 col-md-auto text-center">
+            <div class="d-flex justify-content-center justify-content-md-end gap-2">
+              <a href="https://www.facebook.com/intecapoficial/?locale=es_LA" target="_blank" class="icon-facebook">
+                <i class="bi bi-facebook fs-1"></i>
+              </a>
+              <a href="https://x.com/intecapoficial?lang=es" target="_blank" class="icon-twitter">
+                <i class="bi bi-twitter fs-1"></i>
+              </a>
+              <a href="https://www.instagram.com/intecapoficial/?hl=es" target="_blank" class="icon-instagram">
+                <i class="bi bi-instagram fs-1"></i>
+              </a>
+              <a href="https://www.youtube.com/intecapoficial" target="_blank" class="icon-youtube">
+                <i class="bi bi-youtube fs-1"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/intecap" target="_blank" class="icon-linkedin">
+                <i class="bi bi-linkedin fs-1"></i>
+              </a>
+            </div>
+          </div>
+                  
+        </div>
+    </div>
+    <div class="border-top border-3 border-dark my-4"></div>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav ">
+                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                  <a class="nav-link active" aria-current="page" href="empleados.html">Empleados</a>
+                  <a class="nav-link active" aria-current="page" href="sueldoliquido.html">Sueldo Liquido</a>
+                  <a class="nav-link active" aria-current="page" href="indemnizacion.html">Indemnización</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="row min-vh-100">
+            <div class="col-12 col-md-4 d-flex flex-column">
+                <div class="border rounded p-3 mb-3">
+                    <h2 class="text-center">Empleados</h2>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del empleado">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha de Ingreso</label>
+                        <input type="date" class="form-control" id="fecha">
+                    </div>
+                    <div class="mb-3">
+                        <label for="puesto" class="form-label">Puesto</label>
+                        <input type="text" class="form-control" id="puesto" placeholder="Ingrese el puesto del empleado">
+                    </div>
+                    <div class="mb-3">
+                        <label for="salario" class="form-label">Salario</label>
+                        <input type="number" class="form-control" id="salario" placeholder="Ingrese el salario">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary mt-3 mb-2" id="guardar" style="width: 200px;">Guardar</button>
+                    </div>
+                </div>
+                <div class="border rounded p-3 text-center mt-3">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 425px;">
+                        <img src="img/52.jpg" class="img-fluid" alt="52 Años" style="height: 300px; width: 300px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 flex-column border rounded p-3">
+              <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                  <h2>Tabla de Empleados</h2>
+                  <div class="mt-3 mt-md-0">
+                      <button class="btn btn-success me-2" id="eliminarPrimero" style="width: 200px;">Eliminar Primero</button>
+                      <button class="btn btn-success me-2" id="eliminarUltimo" style="width: 200px;">Eliminar Último</button>
+                  </div>
+              </div>
+              <table class="table table-striped table-primary mt-4 flex-grow-1" id="tablaEmpleados">
+                  <thead class="table-dark">
+                      <tr>
+                          <th>Nombre</th>
+                          <th>Fecha de ingreso</th>
+                          <th>Puesto</th>
+                          <th>Salario</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+    </div>          
+    <script src="js/empleados.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>

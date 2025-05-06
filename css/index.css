@@ -1,0 +1,73 @@
+/* Colores personalizados para los íconos */
+.icon-facebook {
+    color: #1877f2; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+  }
+  
+  .icon-twitter {
+    color: #0d0d0e; 
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .icon-instagram {
+    color: #e1306c; 
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .icon-youtube {
+    color: #ff0000; 
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .icon-linkedin {
+    color: #0077b5; 
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Animación de hover: cambia el tamaño y el color al pasar el cursor */
+  .icon-facebook:hover,
+  .icon-twitter:hover,
+  .icon-instagram:hover,
+  .icon-youtube:hover,
+  .icon-linkedin:hover {
+    transform: scale(1.2); 
+    color: #ff6347; 
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .animated-link {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.navbar-nav .nav-link:hover {
+    color: blue !important; 
+    transform: scale(1.1); 
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: blue; 
+    transition: width 0.3s ease; 
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+
+

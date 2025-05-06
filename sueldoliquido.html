@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sueldo Liquido</title>
+  <link rel="stylesheet" href="css/sueldoliquido.css">
+  <link rel="shortcut icon" href="img/Icono-Celeste-148x300.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container mt-3">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-auto text-center mb-3 mb-md-0">
+        <img src="https://intecap.edu.gt/wp-content/uploads/2021/06/logo-intecap.png" alt="baner intecap"
+          class="img-fluid" style="width: 200px; height: auto;">
+      </div>
+      <div class="col-12 col-md"></div>
+      <div class="col-12 col-md-auto text-center">
+        <div class="d-flex justify-content-center justify-content-md-end gap-2">
+          <a href="https://www.facebook.com/intecapoficial/?locale=es_LA" target="_blank" class="icon-facebook">
+            <i class="bi bi-facebook fs-1"></i>
+          </a>
+          <a href="https://x.com/intecapoficial?lang=es" target="_blank" class="icon-twitter">
+            <i class="bi bi-twitter fs-1"></i>
+          </a>
+          <a href="https://www.instagram.com/intecapoficial/?hl=es" target="_blank" class="icon-instagram">
+            <i class="bi bi-instagram fs-1"></i>
+          </a>
+          <a href="https://www.youtube.com/intecapoficial" target="_blank" class="icon-youtube">
+            <i class="bi bi-youtube fs-1"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/intecap" target="_blank" class="icon-linkedin">
+            <i class="bi bi-linkedin fs-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top border-3 border-dark my-4"></div>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="empleados.html">Empleados</a>
+            <a class="nav-link active" aria-current="page" href="sueldoliquido.html">Sueldo Liquido</a>
+            <a class="nav-link active" aria-current="page" href="indemnizacion.html">Indemnización</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="row min-vh-100">
+      <div class="col-12 col-md-9 d-flex align-items-start mt-4">
+        <div class="border rounded p-4 w-100 h-100 d-flex flex-column">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="border rounded p-3 h-100">
+                <h4 class="text-center mb-3">Ingresos</h4>
+                <div class="mb-2">
+                  <label class="form-label">Salario</label>
+                  <input type="number" class="form-control" id="salario">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Bonificación</label>
+                  <input type="number" class="form-control" id="bonificacion">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Comisiones</label>
+                  <input type="number" class="form-control" id="comisiones">
+                </div>
+                <div class="bg-info-subtle  border border-dark text-dark p-2 rounded mt-3" id="resultadoGanado"
+                  style=" height: 200px;"></div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="border rounded p-3 h-100">
+                <h4 class="text-center mb-3">Egresos</h4>
+                <div class="mb-2">
+                  <label class="form-label">Ahorro</label>
+                  <input type="number" class="form-control" id="ahorro">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">IGSS (4.83% del salario)</label>
+                  <input type="text" class="form-control" id="igss" readonly>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Préstamos/Otros descuentos</label>
+                  <input type="number" class="form-control" id="prestamos">
+                </div>
+                <div class="bg-info-subtle  border border-dark p-2 rounded mt-3" id="resultadoDescuentos"
+                  style="height: 200px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 d-flex flex-column align-items-center">
+            <button onclick="calcularSueldo()" class="btn btn-primary mb-3">Obtener sueldo líquido</button>
+            <div class="bg-info-subtle   border border-dark text-dark p-3 rounded shadow w-50 text-center"
+              id="resultadoLiquido" style=" height: 200px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 d-flex align-items-start mt-4">
+        <div class="card text-center w-100 h-100">
+          <div class="card-body d-flex justify-content-center">
+            <img src="img/52.jpg" class="img-fluid" alt="52 Años" style="width: 300px; height: 300px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/sueldoliquido.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
